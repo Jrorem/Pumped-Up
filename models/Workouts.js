@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Project extends Model {}
+class Workouts extends Model {}
 
 Workouts.init(
     {
@@ -30,6 +30,15 @@ Workouts.init(
         offset: {
             type: DataTypes.INTEGER,
             allowNull: false,
-        }
-    }
-)
+        },
+    },
+    {
+        sequelize,
+        timestamps: false,
+        freezeTableName: true,
+        underscored: true,
+        modelName: 'Workouts',
+      }
+);
+
+module.exports = Workouts;
