@@ -1,3 +1,3 @@
-DROP DATABASE IF EXISTS pumped-up_db;
+DROP DATABASE IF EXISTS pumpedUp_db;
 
-CREATE DATABASE pumped-up_db;
+CREATE DATABASE pumpedUp_db;
