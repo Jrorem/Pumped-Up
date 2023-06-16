@@ -6,7 +6,7 @@ router.post('/', async (req, res) => {
         const userData = await User.create(req.body);
 
         req.session.save(() => {
-            req.session.user_id = userData.isSoftDeleted;
+            req.session.user_id = userData.id;
             req.session.logged_in = true;
 
             res.status(200).json(userData);
@@ -17,6 +17,8 @@ router.post('/', async (req, res) => {
 });
 
 router.post('/login', async (req, res) => {
+    console.log('THIS IS THE LOGIN ROUTE DATA')
+    console.log(req.body)
     try {
         const userData = await User.findOne({ where: { email: req.body.email} });
         
