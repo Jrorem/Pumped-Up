@@ -1,27 +1,187 @@
 [
-    {
-      "name": "Joe",
-      "email": "joe@hotmail.com",
-      "password": "password12345"
+  {
+    "name": "Joe",
+    "email": "joe@hotmail.com",
+    "password": "password12345",
+    "progress": {
+      "date": "2023-06-19",
+      "weight": 70,
+      "bodyFatPercentage": 15,
+      "measurements": {
+        "chest": 90,
+        "waist": 75,
+        "hips": 95
+      }
     },
-    {
-      "name": "Hashim",
-      "email": "hashim@gmail.com",
-      "password": "password12345"
+    "routines": [
+      {
+        "name": "Routine 1",
+        "description": "Routine 1 description",
+        "workouts": [
+          {
+            "name": "workout 1",
+            "type": "aerobic",
+            "muscle": "biceps",
+            "difficulty": "easy",
+            "offset": 1
+          },
+          {
+            "name": "workout 2",
+            "type": "anaerobic",
+            "muscle": "triceps",
+            "difficulty": "hard",
+            "offset": 2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Hashim",
+    "email": "hashim@gmail.com",
+    "password": "password12345",
+    "progress": {
+      "date": "2023-06-19",
+      "weight": 70,
+      "bodyFatPercentage": 15,
+      "measurements": {
+        "chest": 90,
+        "waist": 75,
+        "hips": 95
+      }
     },
-    {
-      "name": "Dylan",
-      "email": "dylan@aol.com",
-      "password": "password12345"
+    "routines": [
+      {
+        "name": "Routine 1",
+        "description": "Routine 1 description",
+        "workouts": [
+          {
+            "name": "workout 3",
+            "type": "aerobic",
+            "muscle": "calves",
+            "difficulty": "easy",
+            "offset": 3
+          },
+          {
+            "name": "workout 4",
+            "type": "anaerobic",
+            "muscle": "quadriceps",
+            "difficulty": "intermediate",
+            "offset": 4
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Dylan",
+    "email": "dylan@aol.com",
+    "password": "password12345",
+    "progress": {
+      "date": "2023-06-19",
+      "weight": 70,
+      "bodyFatPercentage": 15,
+      "measurements": {
+        "chest": 90,
+        "waist": 75,
+        "hips": 95
+      }
     },
-    {
-      "name": "Magnus",
-      "email": "magnus@msn.com",
-      "password": "password12345"
+    "routines": [
+      {
+        "name": "Routine 1",
+        "description": "Routine 1 description",
+        "workouts": [
+          {
+            "name": "workout 3",
+            "type": "aerobic",
+            "muscle": "calves",
+            "difficulty": "easy",
+            "offset": 3
+          },
+          {
+            "name": "workout 2",
+            "type": "anaerobic",
+            "muscle": "triceps",
+            "difficulty": "hard",
+            "offset": 2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Magnus",
+    "email": "magnus@msn.com",
+    "password": "password12345",
+    "progress": {
+      "date": "2023-06-19",
+      "weight": 70,
+      "bodyFatPercentage": 15,
+      "measurements": {
+        "chest": 90,
+        "waist": 75,
+        "hips": 95
+      }
     },
-    {
-      "name": "Andrew",
-      "email": "andrew@yahoo.com",
-      "password": "password12345"
-    }
-  ]
+    "routines": [
+      {
+        "name": "Routine 1",
+        "description": "Routine 1 description",
+        "workouts": [
+          {
+            "name": "workout 3",
+            "type": "aerobic",
+            "muscle": "calves",
+            "difficulty": "easy",
+            "offset": 3
+          },
+          {
+            "name": "workout 1",
+            "type": "aerobic",
+            "muscle": "biceps",
+            "difficulty": "easy",
+            "offset": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Andrew",
+    "email": "andrew@yahoo.com",
+    "password": "password12345",
+    "progress": {
+      "date": "2023-06-19",
+      "weight": 70,
+      "bodyFatPercentage": 15,
+      "measurements": {
+        "chest": 90,
+        "waist": 75,
+        "hips": 95
+      }
+    },
+    "routines": [
+      {
+        "name": "Routine 1",
+        "description": "Routine 1 description",
+        "workouts": [
+          {
+            "name": "workout 3",
+            "type": "aerobic",
+            "muscle": "calves",
+            "difficulty": "easy",
+            "offset": 3
+          },
+          {
+            "name": "workout 1",
+            "type": "aerobic",
+            "muscle": "biceps",
+            "difficulty": "easy",
+            "offset": 1
+          }
+        ]
+      }
+    ]
+  }
+]

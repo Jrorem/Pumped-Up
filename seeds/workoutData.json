@@ -1,0 +1,30 @@
+[
+    {
+        "name": "workout 1",
+        "type": "aerobic",
+        "muscle": "biceps",
+        "difficulty": "easy",
+        "offset": 1
+    },
+    {
+        "name": "workout 2",
+        "type": "anaerobic",
+        "muscle": "triceps",
+        "difficulty": "hard",
+        "offset": 2
+    },
+    {
+        "name": "workout 3",
+        "type": "aerobic",
+        "muscle": "calves",
+        "difficulty": "easy",
+        "offset": 3
+    },
+    {
+        "name": "workout 4",
+        "type": "anaerobic",
+        "muscle": "quadriceps",
+        "difficulty": "intermediate",
+        "offset": 4
+    }
+]
