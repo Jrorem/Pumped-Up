@@ -17,19 +17,19 @@ Workouts.init(
         },
         type: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
         },
         muscle: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
         },
         difficulty: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
         },
         offset: {
             type: DataTypes.INTEGER,
-            allowNull: false,
+            allowNull: true,
         },
         routine_id: {  
             type: DataTypes.INTEGER,

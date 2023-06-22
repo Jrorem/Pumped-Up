@@ -14,7 +14,8 @@ Progress.belongsTo(User, {
 
 User.hasMany(Routines, {
     foreignKey: 'user_id',
-    onDelete: 'CASCADE'
+    onDelete: 'CASCADE',
+    as: 'routines'
 });
 
 Routines.belongsTo(User, {

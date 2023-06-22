@@ -1,12 +1,16 @@
 const express = require('express');
 const router = express.Router();
-const  { Routines } = require('../../models');
+
+const { Routines } = require('../../models');
+const { User } = require('../../models');
+let userId = {};
 
 // Get all routines
 router.get('/', async (req, res) => {
   try {
-    const routines = await Routines.findAll();
-    res.json(routines);
+    const userId = req.session.user_id; 
+    const routine = await Routines.findAll({ where: { user_id: userId } });
+    res.json(routine);
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: 'Server error' });
@@ -40,7 +44,18 @@ router.post('/', async (req, res) => {
   // })
   console.log(req.body);
   try {
-    const routine = await Routines.create(req.body);
+    const { routine_name, user_id, description } = req.body;
+    const userId = req.session.user_id;
+
+    const user = await User.findByPk(userId); 
+
+    if (!user) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+    const routine = await user.createRoutine({
+      routine_name,
+      description
+    });
     res.status(201).json(routine);
   } catch (err) {
     console.error(err);
