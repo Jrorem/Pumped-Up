@@ -11,7 +11,7 @@ console.log(userId);
 router.get('/', async (req, res) => {
   console.log('HHHHEEEEEEEEYYYYYYYYYYYYYYYY');
   try {
-    const userId = req.session.user_id; // Assuming the user ID is stored in req.session.user_id
+    const userId = req.session.user_id; 
     const progress = await Progress.findAll({ where: { user_id: userId } });
 
     // Format the date for each progress entry

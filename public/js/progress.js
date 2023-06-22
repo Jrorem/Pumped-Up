@@ -13,8 +13,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (response.ok) {
       const data = await response.json();
       const latestProgress = data[data.length - 1];
-      currentDateElement.textContent = `Current Date: ${latestProgress.date}`;
-      currentWeightElement.textContent = `Current Weight: ${latestProgress.weight}`;
+      currentDateElement.textContent = `Latest Check-in: ${latestProgress.date}`;
+      currentWeightElement.textContent = `Weight: ${latestProgress.weight}`;
     } else {
       console.error('Failed to retrieve progress data');
     }
