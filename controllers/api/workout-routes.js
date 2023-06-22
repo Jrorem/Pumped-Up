@@ -1,5 +1,4 @@
 const router = require('express').Router();
-// const { Workouts } = require('../../models');
 const fetch = require('node-fetch');
 
 router.get('/', async (req, res) => {
