@@ -7,7 +7,7 @@ Routines.init(
     {
         routine_id: {
             type: DataTypes.INTEGER,
-            allowNull: false,
+            allowNull: true,
             primaryKey: true,
             autoIncrement: true
         },
@@ -17,14 +17,15 @@ Routines.init(
         },
         description: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: true
         },
         user_id: { 
             type: DataTypes.INTEGER,
             references: {
                 model: 'user', 
                 key: 'id'
-            }
+            },
+            allowNull: true,
         },
     },
     {

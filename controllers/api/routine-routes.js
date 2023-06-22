@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Routines = require('../../models');
+const  { Routines } = require('../../models');
 
 // Get all routines
 router.get('/', async (req, res) => {
@@ -30,6 +30,15 @@ router.get('/:id', async (req, res) => {
 
 // Create a new routine
 router.post('/', async (req, res) => {
+
+  // Routines.create(req.body).then ((dbResponse) => {
+  //   if (dbResponse) {
+  //     res.status(201).json(dbResponse)
+  //   } else {
+  //     console.log('problem')
+  //   }
+  // })
+  console.log(req.body);
   try {
     const routine = await Routines.create(req.body);
     res.status(201).json(routine);
