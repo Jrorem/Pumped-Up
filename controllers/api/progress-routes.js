@@ -9,7 +9,6 @@ console.log(userId);
 
 // Get all progress entries
 router.get('/', async (req, res) => {
-  console.log('HHHHEEEEEEEEYYYYYYYYYYYYYYYY');
   try {
     const userId = req.session.user_id; 
     const progress = await Progress.findAll({ where: { user_id: userId } });
