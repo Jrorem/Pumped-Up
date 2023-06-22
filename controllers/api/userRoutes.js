@@ -4,25 +4,44 @@ const { User } = require('../../models');
 router.post('/signup', async (req, res) => {
     console.log("LOOK HERE")
     console.log(req.body)
-    const userInput = {
-        name: req.body.username,
+    // const userInput = {
+    //     name: req.body.userName,
+    //     email: req.body.email,
+    //     password: req.body.password
+    // }
+    // console.log(userInput)
+    User.create({
+        name: req.body.userName,
         email: req.body.email,
         password: req.body.password
-    }
-    try {
-        const userData = await User.create({ userInput })
-        console.log(userData)
-
+    })
+    .then(dbUserData => {
+        console.log('THISISHTHEDOTTHENUSERDATA!!!!!!!!!!!')
+        console.log(dbUserData);
+        // res.json(dbUserData);
         req.session.save(() => {
-            req.session.username = userData.username;
-            req.session.user_id = userData.id;
-            req.session.logged_in = true;
+            req.session.user_id = dbUserData.id;
+            req.session.username = dbUserData.userName;
+            req.session.loggedIn = true;
 
-            res.status(200).json(userData);
-        });
-    } catch (err) {
-        res.status(400).json(err);
-    };
+            res.json(dbUserData);
+        })
+    })
+    // try {
+    //     const userData = await User.create({ userInput })
+    //     console.log('THIS IS WHERE THE USER DATA IS')
+    //     console.log(userData)
+
+    //     req.session.save(() => {
+    //         req.session.username = userData.userName;
+    //         req.session.user_id = userData.id;
+    //         req.session.logged_in = true;
+
+    //         res.status(200).json(userData);
+    //     });
+    // } catch (err) {
+    //     res.status(400).json(err);
+    // };
 });
 
 router.post('/login', async (req, res) => {
