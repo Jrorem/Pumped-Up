@@ -1,6 +1,7 @@
 const searchWorkout = document.getElementById('searchWorkout')
 const workoutInput = document.getElementById('workout-search')
 
+
 const workoutSearch = async (event) => {
     event.preventDefault();
 const input = workoutInput.value
@@ -13,23 +14,29 @@ console.log(input)
         }
         try {
             const response = await fetch(`https://api.api-ninjas.com/v1/exercises?muscle=${input}`, options);
+
             if(!response.ok) {
                 throw new Error('Failed to fetch data from the API')
             }
+                
             const data = await response.json()
             console.log(data);
-            return data;
+
+            //adding code to specify data to use
+
+            const workoutName = data[0].name;
+            const workoutDataElement = document.getElementById("workout-name");
+            workoutDataElement.textContent = workoutName;
+            // return data;
           
         } catch (err) {
             res.status(500).json({ error: 'Failed to fetch data from the API'});
-        };
-
-        // if (response.ok) {
-        //     document.location.replace('/');
-        // } else {
-        //     alert('Failed to fetch workouts')
-        // }
+        //    console.error(err);
+           
     }
 }
+}
 
-searchWorkout.addEventListener("click", workoutSearch)
+
+
+ searchWorkout.addEventListener("click", workoutSearch)
