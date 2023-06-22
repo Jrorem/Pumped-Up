@@ -27,7 +27,10 @@ console.log(input)
 
             //adding code to specify data to use
             workoutResults.innerHTML = '';
+            
+            document.querySelector('.addbtn').style.display = 'block';
 
+                
             for (let i = 0; i < Math.min(data.length, 9); i++) {
                 const workoutName = data[i].name;
                 const workoutInst = data[i].instructions;
@@ -35,6 +38,7 @@ console.log(input)
                 checkbox.type = 'checkbox';
                 checkbox.name = "workout";
                 checkbox.value = workoutName;
+                checkbox.classList.add('routine');
 
                 const label = document.createElement("label");
                 label.appendChild(checkbox);
@@ -44,11 +48,6 @@ console.log(input)
                 container.appendChild(label);
 
                 workoutResults.appendChild(container);
-
-                // const workoutElement = document.createElement("p");
-                // workoutElement.textContent = workoutName;
-                // workoutElement.classList.add("workout-name");
-                // workoutResults.appendChild(workoutElement);
 
                 const instructionElement = document.createElement("p");
                 instructionElement.textContent = workoutInst;
@@ -63,6 +62,29 @@ console.log(input)
 }
 }
 
+const routineClick = async (event) => {
+    const checkbox = document.getElementsByClassName('routine');
+    for(var i = 0; checkbox[i]; i++){
+        if(checkbox[i].checked){
+            const routine_name = checkbox[i].value;
+            try {
+                const response = await fetch('/api/routines', {
+                  method: 'POST',
+                  body: JSON.stringify({ routine_name }),
+                  headers: { 'Content-Type': 'application/json' },
+                });
+                if (response.ok) {
+                    console.log(`Successfully added routine}`);
+                  } else {
+                    alert('Failed to add routine');
+                  }
+                } catch (error) {
+                  console.error('Error adding routine:', error);
+                }    
+        }
+    }
+}
 
+document.querySelector('.addbtn').addEventListener("click", routineClick);
 
- searchWorkout.addEventListener("click", workoutSearch)
+searchWorkout.addEventListener("click", workoutSearch);

@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+
 const { Routines } = require('../../models');
 const { User } = require('../../models');
 let userId = {};
@@ -33,6 +34,15 @@ router.get('/:id', async (req, res) => {
 
 // Create a new routine
 router.post('/', async (req, res) => {
+
+  // Routines.create(req.body).then ((dbResponse) => {
+  //   if (dbResponse) {
+  //     res.status(201).json(dbResponse)
+  //   } else {
+  //     console.log('problem')
+  //   }
+  // })
+  console.log(req.body);
   try {
     const { routine_name, user_id, description } = req.body;
     const userId = req.session.user_id;

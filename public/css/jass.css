@@ -1703,3 +1703,8 @@ form [type='radio'] {
     align-content: center;
   }
 }
+
+
+.addbtn{
+display:none;
+}
