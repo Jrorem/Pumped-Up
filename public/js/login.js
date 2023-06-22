@@ -1,3 +1,26 @@
+const signupButton = document.getElementById('signup-btn');
+
+const signupHandler = async (event) => {
+  event.preventDefault();
+  const userName = document.getElementById('signup-name').value.trim();
+  const email = document.querySelector('#email-signup').value.trim();
+  const password = document.querySelector('#password-signup').value.trim();
+  console.log(userName, email, password);
+  if (userName && email && password) {
+     const response = await fetch('/api/users/signup', {
+      method: 'POST',
+      body: JSON.stringify({ userName, email, password }),
+      headers: { 'Content-Type': 'application/json' },
+    });
+    if (response.ok) {
+      document.location.replace('/');
+    } else {
+      alert('Failed to sign up');
+    }
+  }
+}
+
+
 const loginFormHandler = async (event) => {
   // Stop the browser from submitting the form so we can do so with JavaScript
   event.preventDefault();
@@ -25,3 +48,5 @@ const loginFormHandler = async (event) => {
 document
   .querySelector('.login-form')
   .addEventListener('submit', loginFormHandler);
+  
+signupButton.addEventListener('click', signupHandler);
