@@ -7,12 +7,12 @@ const router = express.Router();
 const progressData = [];
 
 // Get all progress entries
-router.get('/progress', (req, res) => {
+router.get('/', (req, res) => {
   res.json(progressData);
 });
 
 // Create a new progress entry
-router.post('/progress', (req, res) => {
+router.post('/', (req, res) => {
   const { date, weight, bodyFatPercentage, measurements } = req.body;
   const progress = new Progress(date, weight, bodyFatPercentage, measurements);
   progressData.push(progress);
@@ -20,7 +20,7 @@ router.post('/progress', (req, res) => {
 });
 
 // Delete a progress entry
-router.delete('/progress/:id', (req, res) => {
+router.delete('/:id', (req, res) => {
   const { id } = req.params;
   const index = progressData.findIndex(progress => progress.id === id);
   if (index !== -1) {
