@@ -43,4 +43,8 @@ router.get('/routines', async (req, res) => {
   res.render('routines')
 })
 
+router.get('/instructions', async (req, res) => {
+  res.render('instructions')
+})
+
 module.exports = router;
