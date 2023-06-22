@@ -3,8 +3,8 @@ const signupButton = document.getElementById('signup-btn');
 const signupHandler = async (event) => {
   event.preventDefault();
   const userName = document.getElementById('signup-name').value.trim();
-  const email = document.querySelector('#email-signup').value.trim();
-  const password = document.querySelector('#password-signup').value.trim();
+  const email = document.getElementById('email-signup').value.trim();
+  const password = document.getElementById('password-signup').value.trim();
   console.log(userName, email, password);
   if (userName && email && password) {
     const response = await fetch('/api/users/signup', {
@@ -26,8 +26,8 @@ const loginFormHandler = async (event) => {
   event.preventDefault();
 
   // Gather the data from the form elements on the page
-  const email = document.querySelector('#email-login').value.trim();
-  const password = document.querySelector('#password-login').value.trim();
+  const email = document.getElementById('email-login').value.trim();
+  const password = document.getElementById('password-login').value.trim();
   console.log(email, password);
   if (email && password) {
     // Send the e-mail and password to the server
