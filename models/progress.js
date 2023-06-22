@@ -1,35 +1,42 @@
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
+const { Model, DataTypes } = require("sequelize");
+const sequelize = require("../config/connection");
 
 class Progress extends Model {}
 
-
 Progress.init(
   {
-  date: {
-    type: DataTypes.DATE,
-    allowNull: false
-  },
-  weight: {
-    type: DataTypes.FLOAT,
-    allowNull: false
-  },
-  bodyFatPercentage: {
-    type: DataTypes.FLOAT,
-    allowNull: false
-  },
-  measurements: {
-    type: DataTypes.JSON,
-    allowNull: false
-  }
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true,
+    },
+    date: {
+      type: DataTypes.DATE,
+      allowNull: false,
+    },
+    weight: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    user_id: {
+      // Add the user_id column
+      type: DataTypes.INTEGER,
+      allowNull: true,
+      references: {
+        model: "user", // Assuming the referenced table is named 'user'
+        key: "id",
+      },
+    },
   },
   {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'progress',
-  });
+    modelName: "progress",
+  }
+);
 
 module.exports = Progress;
 
