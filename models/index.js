@@ -4,21 +4,21 @@ const Routines = require('./Routines');
 const Progress = require('./Progress');
 
 User.hasOne(Progress, {
-    foreignKey: 'id',
+    foreignKey: 'user_id',
     onDelete: 'CASCADE'
 });
 
 Progress.belongsTo(User, {
-    foreignKey: 'id',
+    foreignKey: 'user_id',
 });
 
 User.hasMany(Routines, {
-    foreignKey: 'id',
+    foreignKey: 'user_id',
     onDelete: 'CASCADE'
 });
 
 Routines.belongsTo(User, {
-    foreignKey: 'id',
+    foreignKey: 'user_id',
 });
 
 Routines.hasMany(Workouts, {
