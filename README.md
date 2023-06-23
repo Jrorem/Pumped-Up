@@ -8,7 +8,9 @@ Pumped-Up is a comprehensive workout app designed to help you reach your fitness
 
 ## Installation
 
-To get started with Pumped-Up, follow these steps:
+No installation necessary, simply visit: https://lit-atoll-87155-fc436e3971a9.herokuapp.com/
+
+If you wish to get into the code, follow these steps:
 
 Clone the Pumped-Up repository to your local machine:
 git clone https://github.com/pumped-up
