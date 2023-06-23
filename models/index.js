@@ -1,7 +1,7 @@
 const User = require('./User');
 const Workouts = require('./Workouts');
-const Routines = require('./Routines');
-const Progress = require('./Progress');
+const Routines = require('./routines');
+const Progress = require('./progress');
 
 User.hasOne(Progress, {
     foreignKey: 'user_id',
