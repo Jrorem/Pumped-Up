@@ -12,15 +12,4 @@ const sequelize = process.env.JAWSDB_URL
       },
     });
 
-// Get the database connection details from the environment variable
-const dbUrl = process.env.DATABASE_URL;
-
-// Create the MySQL connection pool
-const pool = mysql.createPool(dbUrl);
-
-// Use the pool to execute queries
-pool.query('SELECT * FROM your_table', (error, results) => {
-  // Handle the query results
-});
-
 module.exports = sequelize;
